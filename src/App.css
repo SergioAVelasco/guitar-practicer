@@ -1,0 +1,227 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- Barra superior ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.song {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- Zona central ---------- */
+.main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.tracks {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 12px;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+}
+
+.tracks h2 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.tracks ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tracks li {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.tracks li.active .track-name {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.track-name {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viewport {
+  position: relative;
+  flex: 1;
+  overflow: auto;
+  background: #fbfaf7; /* "papel" claro para la partitura */
+}
+
+.sheet {
+  min-height: 100%;
+}
+
+.banner {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 6px 16px;
+  background: var(--panel-2);
+  color: var(--text);
+  text-align: center;
+}
+
+.banner.error {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* Estilos del cursor y la selección de alphaTab */
+.at-cursor-bar {
+  background: rgba(245, 165, 36, 0.18);
+}
+
+.at-selection div {
+  background: rgba(64, 120, 255, 0.15);
+}
+
+.at-cursor-beat {
+  background: rgba(230, 120, 0, 0.9);
+  width: 3px;
+}
+
+.at-highlight * {
+  fill: #d9480f;
+  stroke: #d9480f;
+}
+
+/* ---------- Reproductor ---------- */
+.player {
+  padding: 8px 16px 10px;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+}
+
+.player .row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player .controls {
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 8px;
+}
+
+.player .group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.play {
+  width: 44px;
+}
+
+.progress {
+  flex: 1;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  min-width: 3em;
+  text-align: center;
+}
+
+.speed-value {
+  min-width: 3em;
+  font-variant-numeric: tabular-nums;
+}
+
+.chip {
+  padding: 2px 8px;
+  font-size: 13px;
+}
+
+.chip.on,
+.toggle.on {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+}
+
+.chip.on.mute {
+  background: var(--danger);
+  border-color: var(--danger);
+  color: #fff;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  text-decoration: underline;
+  padding: 0;
+}
+
+.hint {
+  font-size: 13px;
+}
+
+.trainer label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ---------- Arrastrar archivo ---------- */
+.dropzone {
+  position: fixed;
+  inset: 12px;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  border: 3px dashed var(--accent);
+  border-radius: 16px;
+  background: rgba(21, 23, 28, 0.85);
+  font-size: 22px;
+  pointer-events: none;
+}
